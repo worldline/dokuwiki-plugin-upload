@@ -36,7 +36,7 @@ class syntax_plugin_upload extends DokuWiki_Syntax_Plugin {
 		
 		$params = array();
 		$params['id'] = 'upload_plugin';
-		$params['action'] = DOKU_BASE.'doku.php?id='.$ID;
+		$params['action'] = wl($ID);
 		$params['method'] = 'post';
 		$params['enctype'] = 'multipart/form-data';
 		$params['class'] = 'upload__plugin';
