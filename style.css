@@ -11,6 +11,7 @@ div.dokuwiki form.upload__plugin fieldset {
 }
 
 div.dokuwiki form.upload__plugin label {
+    float: left;
     display: block;
     margin: 5px;
 }
@@ -29,7 +30,13 @@ div.dokuwiki form.upload__plugin label input {
 }
 
 div.dokuwiki form.upload__plugin input.button {
+    float: left;
     display: block;
     margin: 5px;
 }
 
+div.dokuwiki form.upload__plugin input.button {
+    float: left;
+    display: block;
+    margin: 5px;
+}
