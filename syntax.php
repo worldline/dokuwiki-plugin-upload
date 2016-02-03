@@ -45,7 +45,7 @@ class syntax_plugin_upload extends DokuWiki_Syntax_Plugin {
         $this->Lexer->addSpecialPattern('\{\{upload>.+?\}\}', $mode, 'plugin_upload');
     }
 
-    function handle($match, $state, $pos, &$handler) {
+    function handle($match, $state, $pos, Doku_Handler $handler) {
         global $ID;
 
         $match = substr($match, 9, -2);
@@ -68,7 +68,7 @@ class syntax_plugin_upload extends DokuWiki_Syntax_Plugin {
         return array('uploadns' => hsc($ns), 'para' => $options);
     }
 
-    function render($mode, &$renderer, $data) {
+    function render($mode, Doku_Renderer $renderer, $data) {
         if($mode == 'xhtml') {
             //check auth
             $auth = auth_quickaclcheck($data['uploadns'] . ':*');
