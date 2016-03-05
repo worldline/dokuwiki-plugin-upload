@@ -31,7 +31,7 @@ class action_plugin_upload extends DokuWiki_Action_Plugin {
     /**
      * Register its handlers with the DokuWiki's event controller
      */
-    function register(&$controller) {
+    function register(Doku_Event_Handler $controller) {
         $controller->register_hook('PARSER_CACHE_USE', 'BEFORE', $this, '_hook_function_cache');
         $controller->register_hook('ACTION_HEADERS_SEND', 'BEFORE', $this, '_hook_function_upload');
     }
