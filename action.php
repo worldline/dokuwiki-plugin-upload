@@ -59,7 +59,7 @@ class action_plugin_upload extends DokuWiki_Action_Plugin {
 
         // check auth
         $AUTH = auth_quickaclcheck("$NS:*");
-        if($AUTH < AUTH_UPLOAD) {
+        if($AUTH < AUTH_UPLOAD  && $_FILES['upload']['tmp_name']) {
             msg($lang['uploadfail'], -1);
             return;
         }
