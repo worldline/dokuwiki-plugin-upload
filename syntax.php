@@ -28,7 +28,7 @@ class syntax_plugin_upload extends DokuWiki_Syntax_Plugin {
             'name' => 'upload plugin',
             'desc' => 'upload plugin can add a link to the media manager in your wikipage.
             			Basic syntax: {{upload>namespace|option1|option2}}
-				Use @page@ as namespage to use ID of the actual page as namespace or @current@ to use the namespace the current page is in.',
+				Use @wlpage@ as namespage to use ID of the actual page as namespace or @wlcurrent@ to use the namespace the current page is in.',
             'url' => 'http://wiki.splitbrain.org/plugin:upload',
         );
     }
@@ -57,9 +57,9 @@ class syntax_plugin_upload extends DokuWiki_Syntax_Plugin {
 
         $ns = $matches[0];
 
-        if($ns == '@page@') {
+        if($ns == '@wlpage@') {
             $ns = $ID;
-        } else if($ns == '@current@') {
+        } else if($ns == '@wlcurrent@') {
             $ns = getNS($ID);
         } else {
             resolve_pageid(getNS($ID), $ns, $exists);
